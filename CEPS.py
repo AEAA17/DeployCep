@@ -181,21 +181,14 @@ if uploaded_file is not None:
                 A3 = fatores['A3']
 
                 medias_linhas = df.mean(axis=1)
-                amplitude_linhas = df.max(axis=1) - df.min(axis=1)
+                desvios_linhas = df.std(axis=1)
 
                 media_global = medias_linhas.mean()
-                amplitude_media = amplitude_linhas.mean()
+                desvio_medio = desvios_linhas.mean()
 
-                lsc_xr = media_global + A3 * amplitude_media
-                lic_xr = media_global - A3 * amplitude_media
-                medias_linhas = df.mean(axis=1)
-                amplitude_linhas = df.max(axis=1) - df.min(axis=1)
+                lsc_xs = media_global + A3 * desvio_medio
+                lic_xs = media_global - A3 * desvio_medio
 
-                media_global = medias_linhas.mean()
-                amplitude_media = amplitude_linhas.mean()
-
-                lsc_xr = media_global + A3 * amplitude_media
-                lic_xr = media_global - A3 * amplitude_media
                 # Calculando as métricas
                 acima_lsc = sum(medias_linhas > lsc_xr)
                 abaixo_lic = sum(medias_linhas < lic_xr)
@@ -313,14 +306,7 @@ if uploaded_file is not None:
 
                 lsc_xr = media_global + A2 * amplitude_media
                 lic_xr = media_global - A2 * amplitude_media
-                medias_linhas = df.mean(axis=1)
-                amplitude_linhas = df.max(axis=1) - df.min(axis=1)
-
-                media_global = medias_linhas.mean()
-                amplitude_media = amplitude_linhas.mean()
-
-                lsc_xr = media_global + A2 * amplitude_media
-                lic_xr = media_global - A2 * amplitude_media
+                
                 # Calculando as métricas
                 acima_lsc = sum(medias_linhas > lsc_xr)
                 abaixo_lic = sum(medias_linhas < lic_xr)
