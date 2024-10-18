@@ -216,7 +216,7 @@ if uploaded_file is not None:
                 fig.add_hline(y=lic_xs, line_dash="dash", line_color="red")
                 # Adicionando anotações à esquerda
                 
-                fig.add_annotation(x=0, y=lsc_xr, text=f"{lsc_xs:.3f}", 
+                fig.add_annotation(x=0, y=lsc_xs, text=f"{lsc_xs:.3f}", 
                                 showarrow=False, xanchor='left', align='left', 
                                 xref='paper', yref='y', xshift=10)
                 fig.add_annotation(x=0, y=lic_xs, text=f"{lic_xs:.3f}", 
