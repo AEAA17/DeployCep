@@ -97,10 +97,10 @@ if uploaded_file is not None:
                 fig.add_hline(y=lic_xr, line_dash="dash", line_color="red")
                 # Adicionando anotações à esquerda
                
-                fig.add_annotation(x=0, y=lsc_xr, text=f"{lsc_xr:.2f}", 
+                fig.add_annotation(x=0, y=lsc_xr, text=f"{lsc_xr:.3f}", 
                                 showarrow=False, xanchor='left', align='left', 
                                 xref='paper', yref='y', xshift=10)
-                fig.add_annotation(x=0, y=lic_xr, text=f"{lic_xr:.2f}", 
+                fig.add_annotation(x=0, y=lic_xr, text=f"{lic_xr:.3f}", 
                                 showarrow=False, xanchor='left', align='left', 
                                 xref='paper', yref='y', xshift=10)
 
@@ -155,10 +155,10 @@ if uploaded_file is not None:
                 fig.add_hline(y=lic_r, line_dash="dash", line_color="red")
 
                
-                fig.add_annotation(x=0, y=lsc_r, text=f"{lsc_r:.2f}", 
+                fig.add_annotation(x=0, y=lsc_r, text=f"{lsc_r:.3f}", 
                                    showarrow=False, xanchor='left', align='left', 
                                    xref='paper', yref='y', xshift=10)
-                fig.add_annotation(x=0, y=lic_r, text=f"{lic_r:.2f}", 
+                fig.add_annotation(x=0, y=lic_r, text=f"{lic_r:.3f}", 
                                    showarrow=False, xanchor='left', align='left', 
                                    xref='paper', yref='y', xshift=10)
 
@@ -212,14 +212,14 @@ if uploaded_file is not None:
 
                 # Adicionando as linhas de controle
                 fig.add_hline(y=media_global, line_dash="dash", line_color="green")
-                fig.add_hline(y=lsc_xr, line_dash="dash", line_color="red")
-                fig.add_hline(y=lic_xr, line_dash="dash", line_color="red")
+                fig.add_hline(y=lsc_xs, line_dash="dash", line_color="red")
+                fig.add_hline(y=lic_xs, line_dash="dash", line_color="red")
                 # Adicionando anotações à esquerda
                 
-                fig.add_annotation(x=0, y=lsc_xr, text=f"{lsc_xr:.2f}", 
+                fig.add_annotation(x=0, y=lsc_xr, text=f"{lsc_xr:.3f}", 
                                 showarrow=False, xanchor='left', align='left', 
                                 xref='paper', yref='y', xshift=10)
-                fig.add_annotation(x=0, y=lic_xr, text=f"{lic_xr:.2f}", 
+                fig.add_annotation(x=0, y=lic_xr, text=f"{lic_xr:.3f}", 
                                 showarrow=False, xanchor='left', align='left', 
                                 xref='paper', yref='y', xshift=10)
 
@@ -271,10 +271,10 @@ if uploaded_file is not None:
                 fig.add_hline(y=lsc, line_dash="dash", line_color="red")
                 fig.add_hline(y=lic, line_dash="dash", line_color="red")
 
-                fig.add_annotation(x=0, y=lsc, text=f"{lsc:.2f}", 
+                fig.add_annotation(x=0, y=lsc, text=f"{lsc:.3f}", 
                                 showarrow=False, xanchor='left', align='left', 
                                 xref='paper', yref='y', xshift=10)
-                fig.add_annotation(x=0, y=lic, text=f" {lic:.2f}", 
+                fig.add_annotation(x=0, y=lic, text=f" {lic:.3f}", 
                                 showarrow=False, xanchor='left', align='left', 
                                 xref='paper', yref='y', xshift=10)
 
@@ -333,10 +333,10 @@ if uploaded_file is not None:
                 fig.add_hline(y=lic_xr, line_dash="dash", line_color="red")
                 # Adicionando anotações à esquerda
                 
-                fig.add_annotation(x=0, y=lsc_xr, text=f"{lsc_xr:.2f}", 
+                fig.add_annotation(x=0, y=lsc_xr, text=f"{lsc_xr:.3f}", 
                                 showarrow=False, xanchor='left', align='left', 
                                 xref='paper', yref='y', xshift=10)
-                fig.add_annotation(x=0, y=lic_xr, text=f"{lic_xr:.2f}", 
+                fig.add_annotation(x=0, y=lic_xr, text=f"{lic_xr:.3f}", 
                                 showarrow=False, xanchor='left', align='left', 
                                 xref='paper', yref='y', xshift=10)
 
