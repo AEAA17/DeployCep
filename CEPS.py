@@ -190,8 +190,8 @@ if uploaded_file is not None:
                 lic_xs = media_global - A3 * desvio_medio
 
                 # Calculando as métricas
-                acima_lsc = sum(medias_linhas > lsc_xr)
-                abaixo_lic = sum(medias_linhas < lic_xr)
+                acima_lsc = sum(medias_linhas > lsc_xs)
+                abaixo_lic = sum(medias_linhas < lic_xs)
 
                 # Criando os cartões acima do gráfico
                 coluna_esquerda, coluna_direita = st.columns([1, 1])
