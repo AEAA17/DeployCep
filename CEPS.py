@@ -97,10 +97,10 @@ if uploaded_file is not None:
                 fig.add_hline(y=lic_xr, line_dash="dash", line_color="red")
                 # Adicionando anotações à esquerda
                
-                fig.add_annotation(x=0, y=lsc_xr, text=f"{lsc_xr:.3f}", 
+                fig.add_annotation(x=0, y=lsc_xr, text=f"{lsc_xr:.2f}", 
                                 showarrow=False, xanchor='left', align='left', 
                                 xref='paper', yref='y', xshift=10)
-                fig.add_annotation(x=0, y=lic_xr, text=f"{lic_xr:.3f}", 
+                fig.add_annotation(x=0, y=lic_xr, text=f"{lic_xr:.2f}", 
                                 showarrow=False, xanchor='left', align='left', 
                                 xref='paper', yref='y', xshift=10)
 
@@ -155,10 +155,10 @@ if uploaded_file is not None:
                 fig.add_hline(y=lic_r, line_dash="dash", line_color="red")
 
                
-                fig.add_annotation(x=0, y=lsc_r, text=f"{lsc_r:.3f}", 
+                fig.add_annotation(x=0, y=lsc_r, text=f"{lsc_r:.2f}", 
                                    showarrow=False, xanchor='left', align='left', 
                                    xref='paper', yref='y', xshift=10)
-                fig.add_annotation(x=0, y=lic_r, text=f"{lic_r:.3f}", 
+                fig.add_annotation(x=0, y=lic_r, text=f"{lic_r:.2f}", 
                                    showarrow=False, xanchor='left', align='left', 
                                    xref='paper', yref='y', xshift=10)
 
@@ -181,17 +181,24 @@ if uploaded_file is not None:
                 A3 = fatores['A3']
 
                 medias_linhas = df.mean(axis=1)
-                desvios_linhas = df.std(axis=1)
+                amplitude_linhas = df.max(axis=1) - df.min(axis=1)
 
                 media_global = medias_linhas.mean()
-                desvio_medio = desvios_linhas.mean()
+                amplitude_media = amplitude_linhas.mean()
 
-                lsc_xs = media_global + A3 * desvio_medio
-                lic_xs = media_global - A3 * desvio_medio
+                lsc_xr = media_global + A3 * amplitude_media
+                lic_xr = media_global - A3 * amplitude_media
+                medias_linhas = df.mean(axis=1)
+                amplitude_linhas = df.max(axis=1) - df.min(axis=1)
 
+                media_global = medias_linhas.mean()
+                amplitude_media = amplitude_linhas.mean()
+
+                lsc_xr = media_global + A3 * amplitude_media
+                lic_xr = media_global - A3 * amplitude_media
                 # Calculando as métricas
-                acima_lsc = sum(medias_linhas > lsc_xs)
-                abaixo_lic = sum(medias_linhas < lic_xs)
+                acima_lsc = sum(medias_linhas > lsc_xr)
+                abaixo_lic = sum(medias_linhas < lic_xr)
 
                 # Criando os cartões acima do gráfico
                 coluna_esquerda, coluna_direita = st.columns([1, 1])
@@ -212,14 +219,14 @@ if uploaded_file is not None:
 
                 # Adicionando as linhas de controle
                 fig.add_hline(y=media_global, line_dash="dash", line_color="green")
-                fig.add_hline(y=lsc_xs, line_dash="dash", line_color="red")
-                fig.add_hline(y=lic_xs, line_dash="dash", line_color="red")
+                fig.add_hline(y=lsc_xr, line_dash="dash", line_color="red")
+                fig.add_hline(y=lic_xr, line_dash="dash", line_color="red")
                 # Adicionando anotações à esquerda
                 
-                fig.add_annotation(x=0, y=lsc_xs, text=f"{lsc_xs:.3f}", 
+                fig.add_annotation(x=0, y=lsc_xr, text=f"{lsc_xr:.2f}", 
                                 showarrow=False, xanchor='left', align='left', 
                                 xref='paper', yref='y', xshift=10)
-                fig.add_annotation(x=0, y=lic_xs, text=f"{lic_xs:.3f}", 
+                fig.add_annotation(x=0, y=lic_xr, text=f"{lic_xr:.2f}", 
                                 showarrow=False, xanchor='left', align='left', 
                                 xref='paper', yref='y', xshift=10)
 
@@ -271,10 +278,10 @@ if uploaded_file is not None:
                 fig.add_hline(y=lsc, line_dash="dash", line_color="red")
                 fig.add_hline(y=lic, line_dash="dash", line_color="red")
 
-                fig.add_annotation(x=0, y=lsc, text=f"{lsc:.3f}", 
+                fig.add_annotation(x=0, y=lsc, text=f"{lsc:.2f}", 
                                 showarrow=False, xanchor='left', align='left', 
                                 xref='paper', yref='y', xshift=10)
-                fig.add_annotation(x=0, y=lic, text=f" {lic:.3f}", 
+                fig.add_annotation(x=0, y=lic, text=f" {lic:.2f}", 
                                 showarrow=False, xanchor='left', align='left', 
                                 xref='paper', yref='y', xshift=10)
 
@@ -306,7 +313,14 @@ if uploaded_file is not None:
 
                 lsc_xr = media_global + A2 * amplitude_media
                 lic_xr = media_global - A2 * amplitude_media
-                
+                medias_linhas = df.mean(axis=1)
+                amplitude_linhas = df.max(axis=1) - df.min(axis=1)
+
+                media_global = medias_linhas.mean()
+                amplitude_media = amplitude_linhas.mean()
+
+                lsc_xr = media_global + A2 * amplitude_media
+                lic_xr = media_global - A2 * amplitude_media
                 # Calculando as métricas
                 acima_lsc = sum(medias_linhas > lsc_xr)
                 abaixo_lic = sum(medias_linhas < lic_xr)
@@ -333,10 +347,10 @@ if uploaded_file is not None:
                 fig.add_hline(y=lic_xr, line_dash="dash", line_color="red")
                 # Adicionando anotações à esquerda
                 
-                fig.add_annotation(x=0, y=lsc_xr, text=f"{lsc_xr:.3f}", 
+                fig.add_annotation(x=0, y=lsc_xr, text=f"{lsc_xr:.2f}", 
                                 showarrow=False, xanchor='left', align='left', 
                                 xref='paper', yref='y', xshift=10)
-                fig.add_annotation(x=0, y=lic_xr, text=f"{lic_xr:.3f}", 
+                fig.add_annotation(x=0, y=lic_xr, text=f"{lic_xr:.2f}", 
                                 showarrow=False, xanchor='left', align='left', 
                                 xref='paper', yref='y', xshift=10)
 
